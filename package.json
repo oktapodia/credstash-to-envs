@@ -7,7 +7,7 @@
     "start": "babel-node src/index.js",
     "test": "npm run lint && npm run test:unit",
     "build": "babel src --source-maps --out-dir dist/",
-    "lint": "./node_modules/.bin/estlint src",
+    "lint": "estlint src",
     "postinstall": "npm run build",
     "test:unit": "jest"
   },
@@ -18,7 +18,7 @@
     "commander": "^2.12.2",
     "debug": "^3.1.0",
     "lodash": "^4.17.4",
-    "nodecredstash": "git+ssh://git@github.com/oktapodia/nodecredstash.git#65e91ba7fe184c1e437b5ab9d716926458f1e6fc"
+    "nodecredstash": "git+https://git@github.com/oktapodia/nodecredstash.git#65e91ba7fe184c1e437b5ab9d716926458f1e6fc"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
