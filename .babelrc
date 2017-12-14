@@ -1,0 +1,7 @@
+{
+  "presets": ["bluebird", "env"],
+  "plugins": [
+    "transform-class-properties",
+    "transform-export-extensions"
+  ]
+}
