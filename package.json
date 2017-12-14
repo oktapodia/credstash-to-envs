@@ -1,0 +1,50 @@
+{
+  "name": "credstash-to-envs",
+  "version": "1.0.0",
+  "description": "Easily Generate & Configure your .env file",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "test": "npm run eslint && npm run test:unit",
+    "build": "babel src --source-maps --out-dir dist/",
+    "lint": "./node_modules/.bin/estlint src",
+    "postinstall": "npm run build",
+    "test:unit": "jest"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^2.12.2",
+    "debug": "^3.1.0",
+    "lodash": "^4.17.4",
+    "nodecredstash": "git+ssh://git@github.com/oktapodia/nodecredstash.git#65e91ba7fe184c1e437b5ab9d716926458f1e6fc"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-preset-bluebird": "^1.0.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.4.2",
+    "jest": "^21.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ag-digital/credstash-config-generator.git"
+  },
+  "keywords": [
+    "env",
+    "configure",
+    "generate"
+  ],
+  "author": "BRAMILLE Sebastien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ag-digital/credstash-config-generator/issues"
+  },
+  "homepage": "https://github.com/ag-digital/credstash-config-generator#readme"
+}
