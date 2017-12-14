@@ -63,8 +63,6 @@ export default class CredstashToEnv {
           params = assign({}, await handler.exec(params));
         }
 
-        console.log(params);
-
         await writeEnvFile(params);
         process.exit();
       })();
