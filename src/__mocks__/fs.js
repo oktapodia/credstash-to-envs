@@ -1,10 +1,13 @@
 const fs = {
   status: false,
-  writeFile: (file, data) => {
+  writtenData: null,
+  writeFile: function(file, data) {
     if (data.match(/(status=error)/i)) {
       // eslint-disable-next-line no-throw-literal
       throw { error: 'An error occured' };
     }
+
+    this.writtenData = data;
   },
   existsSync() {
     return this.status;

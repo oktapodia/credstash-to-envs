@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+/* eslint-disable */
 
 export CredstashToEnv from './CredstashToEnv';
 export AbstractHandler from './AbstractHandler';

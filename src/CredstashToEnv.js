@@ -1,10 +1,10 @@
-/* eslint-disable */
 import debugPkg from 'debug';
 import prompt from 'co-prompt';
-import { getHandlers, sortHandlers } from './helpers/handlerHelpers';
 import { assign, map } from 'lodash';
 import program from 'commander';
+import Credstash from 'nodecredstash';
 import co from 'co';
+import { getHandlers, sortHandlers } from './helpers/handlerHelpers';
 import { isEnvFileExists, writeEnvFile } from './helpers/envFileHelpers';
 
 const defaultConfig = {
@@ -14,25 +14,24 @@ const defaultConfig = {
   projectName: 'credstash-to-env',
 };
 
+const debug = debugPkg('credstash-to-env');
+
 export default class CredstashToEnv {
   constructor(config = {}) {
     this.config = assign(defaultConfig, config);
+    this.configure();
   }
 
-  async execute() {
-    const debug = debugPkg('credstash-to-env');
-
+  configure() {
     debug('Configure credstash...');
-    const Credstash = require('nodecredstash');
     const credstash = new Credstash({ table: this.config.table, awsOpts: { region: this.config.region } });
 
     debug('Init commanderjs...');
-
     program
       .version('0.1.0');
 
     debug('Register handlers...');
-    const handlers = map(getHandlers(this.config.handlersDir), (Handler) => {
+    this.handlers = map(getHandlers(this.config.handlersDir), (Handler) => {
       const h = new Handler.default(program, credstash, this.config.projectName);
       if (h.option) {
         h.option();
@@ -40,12 +39,15 @@ export default class CredstashToEnv {
 
       return h;
     });
-    program.parse(process.argv);
 
     debug('Sort handlers...');
-    handlers.sort(sortHandlers);
+    this.handlers.sort(sortHandlers);
+    program.parse(process.argv);
+  }
 
-    co(function* main() {
+  async execute() {
+    const handlers = this.handlers;
+    return co(function* main() {
       if (isEnvFileExists()) {
         const overwrite = yield prompt.confirm('The file already exists, would you like to overwrite it? [y/n]');
 
@@ -65,8 +67,7 @@ export default class CredstashToEnv {
 
         await writeEnvFile(params);
         process.exit();
-      })();
+      }());
     });
-
   }
 }

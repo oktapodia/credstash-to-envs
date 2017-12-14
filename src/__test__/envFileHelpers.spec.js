@@ -1,18 +1,9 @@
 import fs from 'fs';
-import { isEnvFileExists, removeNamePrefix, convertObjectToPlainData, writeEnvFile, getProjectName } from '../envFileHelpers';
+import { isEnvFileExists, removeNamePrefix, convertObjectToPlainData, writeEnvFile } from '../helpers/envFileHelpers';
 
 jest.mock('fs');
 
 describe('envFileHelpers', () => {
-  describe('getProjectName', () => {
-    test('return the package.json name', () => {
-      expect(getProjectName()).toBe('test');
-    });
-    test('return false if the file does not exists', () => {
-      fs.setExistsStatus(false);
-      expect(isEnvFileExists()).toBe(false);
-    });
-  });
   describe('isEnvFileExists', () => {
     test('return true if the file exists', () => {
       fs.setExistsStatus(true);
