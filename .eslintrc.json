@@ -6,6 +6,10 @@
   "rules": {
     "new-cap": "off",
     "class-methods-use-this": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "off",
+    "max-len": "off",
+    "prefer-destructuring": "off",
+    "no-await-in-loop": "off"
   }
 }
