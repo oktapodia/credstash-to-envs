@@ -1,7 +1,8 @@
 #!/usr/bin/env node
+'use strict';
+
 require("babel-polyfill");
 
-const CredstashToEnv = require('../dist/CredstashToEnv');
-
-const cred = new CredstashToEnv({ projectName: 'full-monty' });
+var CredstashToEnv = require('../dist/CredstashToEnv');
+var cred = new CredstashToEnv.default({ projectName: 'full-monty' });
 cred.execute();
