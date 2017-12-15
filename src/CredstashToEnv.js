@@ -1,4 +1,6 @@
 import debugPkg from 'debug';
+import fs from 'fs';
+import path from 'path';
 import prompt from 'co-prompt';
 import { assign, map } from 'lodash';
 import program from 'commander';
@@ -18,8 +20,17 @@ const debug = debugPkg('credstash-to-envs');
 
 export default class CredstashToEnv {
   constructor(config = {}) {
-    this.config = assign(defaultConfig, config);
+    this.config = assign(defaultConfig, config, this.getConfigurationFile());
     this.configure();
+  }
+
+  getConfigurationFile() {
+    const fileName = '.cte.js';
+    if (fs.existsSync(fileName)) {
+      return require(path.resolve(fileName)).default;
+    }
+
+    return {};
   }
 
   configure() {
