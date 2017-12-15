@@ -15,6 +15,7 @@
     "cte": "./bin/credstash-to-envs.js"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "bluebird": "^3.5.1",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
