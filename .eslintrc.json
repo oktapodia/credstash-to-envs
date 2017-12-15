@@ -10,6 +10,8 @@
     "no-restricted-syntax": "off",
     "max-len": "off",
     "prefer-destructuring": "off",
-    "no-await-in-loop": "off"
+    "no-await-in-loop": "off",
+    "import/no-dynamic-require": "off",
+    "global-require": "off"
   }
 }
