@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/__test__/fixtures/B.js"],"names":["B","data"],"mappings":";;;;;;;;AAAA;;;;;;;;;;;;IAEqBA,C;;;;;;;;;;;2BACZC,I,EAAM;AACX,aAAOA,IAAP;AACD;;;;;;kBAHkBD,C","file":"B.js","sourcesContent":["import AbstractHandler from '../../AbstractHandler';\n\nexport default class B extends AbstractHandler {\n  handle(data) {\n    return data;\n  }\n}\n"]}
