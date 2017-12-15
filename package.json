@@ -16,6 +16,7 @@
     "cte": "./bin/credstash-to-envs.js"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
@@ -25,7 +26,6 @@
     "nodecredstash": "git+https://git@github.com/oktapodia/nodecredstash.git#65e91ba7fe184c1e437b5ab9d716926458f1e6fc"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
