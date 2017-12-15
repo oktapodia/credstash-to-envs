@@ -64,7 +64,7 @@ describe('CredstashToEnv', function () {
 
           expect(handler.program.Command.constructor.name).toEqual(_commander.Command.constructor.name);
           expect(!handler.credstash).toBe(false); // TODO: Better test the credstash exists
-          expect(handler.projectName).toEqual('credstash-to-env');
+          expect(handler.projectName).toEqual('credstash-to-envs');
         }
       } catch (err) {
         _didIteratorError = true;

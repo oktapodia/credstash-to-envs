@@ -11,6 +11,10 @@
     "postinstall": "npm run build",
     "test:unit": "jest"
   },
+  "bin": {
+    "credstash-to-envs": "./bin/credstash-to-envs.js",
+    "cte": "./bin/credstash-to-envs.js"
+  },
   "dependencies": {
     "bluebird": "^3.5.1",
     "co": "^4.6.0",

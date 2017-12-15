@@ -11,10 +11,10 @@ const defaultConfig = {
   handlersDir: './handlers',
   region: 'eu-west-1',
   table: 'credential-store',
-  projectName: 'credstash-to-env',
+  projectName: 'credstash-to-envs',
 };
 
-const debug = debugPkg('credstash-to-env');
+const debug = debugPkg('credstash-to-envs');
 
 export default class CredstashToEnv {
   constructor(config = {}) {

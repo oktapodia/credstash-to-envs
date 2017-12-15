@@ -46,10 +46,10 @@ var defaultConfig = {
   handlersDir: './handlers',
   region: 'eu-west-1',
   table: 'credential-store',
-  projectName: 'credstash-to-env'
+  projectName: 'credstash-to-envs'
 };
 
-var debug = (0, _debug2.default)('credstash-to-env');
+var debug = (0, _debug2.default)('credstash-to-envs');
 
 var CredstashToEnv = function () {
   function CredstashToEnv() {
