@@ -9,7 +9,7 @@
     "build": "babel src --source-maps --out-dir dist/",
     "postinstall": "npm run build",
     "lint": "./node_modules/.bin/eslint src",
-    "test:unit": "jest"
+    "test:unit": "DEBUG=cred* jest --coverage --no-cache --runInBand"
   },
   "bin": {
     "credstash-to-envs": "./bin/credstash-to-envs.js",
