@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { Command } from 'commander';
+import './setup';
 import CredstashToEnv from '../CredstashToEnv';
 
 jest.mock('fs');

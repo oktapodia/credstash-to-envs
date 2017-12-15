@@ -1,4 +1,5 @@
 import fs from 'fs';
+import './setup';
 import { isEnvFileExists, removeNamePrefix, convertObjectToPlainData, writeEnvFile } from '../helpers/envFileHelpers';
 
 jest.mock('fs');
