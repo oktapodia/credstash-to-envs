@@ -1,5 +1,14 @@
 {
-  "presets": ["bluebird", "env"],
+  "presets": [
+    "bluebird",
+    ["env",
+    {
+      "targets": {
+        "node": "current"
+      },
+      "useBuiltIns": true
+    }]
+  ],
   "plugins": [
     "transform-class-properties",
     "transform-export-extensions"
