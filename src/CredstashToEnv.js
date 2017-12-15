@@ -27,7 +27,7 @@ export default class CredstashToEnv {
   getConfigurationFile() {
     const fileName = '.cte.js';
     if (fs.existsSync(fileName)) {
-      return require(path.resolve(fileName)).default;
+      return require(path.resolve(fileName));
     }
 
     return {};
