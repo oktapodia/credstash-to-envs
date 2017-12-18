@@ -26,6 +26,10 @@ class AbstractHandler {
       });
   }
 
+  handle() {
+    throw new Error('Must be implemented');
+  }
+
   getOrder() {
     return 10;
   }
