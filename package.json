@@ -1,6 +1,6 @@
 {
   "name": "credstash-to-envs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Easily Generate & Configure your .env file",
   "main": "dist/index.js",
   "scripts": {
